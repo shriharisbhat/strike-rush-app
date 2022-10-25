@@ -1,0 +1,8 @@
+{
+  "extends": "./node_modules/@strike/web-rig/profiles/app/tsconfig-base.json",
+  "compilerOptions": {
+    "types": ["heft-jest", "react", "webpack-env"],
+    "jsx": "react-jsx",
+    "lib": ["ES2020", "dom"]
+  }
+}
