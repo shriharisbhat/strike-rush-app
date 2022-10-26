@@ -27,6 +27,7 @@ module.exports = function createConfig(env, argv) {
         host: "localhost",
         port: 8096,
         historyApiFallback: true,
+        https:true
       },
       plugins: [
         new CopyFilesPlugin({
