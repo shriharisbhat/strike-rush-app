@@ -7,11 +7,18 @@ module.exports = {
     "@rushstack/eslint-config/mixins/tsdoc",
     "@rushstack/eslint-config/mixins/react",
   ],
-  parserOptions: { tsconfigRootDir: __dirname },
+  parserOptions: { tsconfigRootDir: __dirname, ecmaVersion: 2020 },
+  plugins: ["react-hooks"],
+
+  rules: {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-parameter-properties": "off",
+  },
 
   settings: {
     react: {
-      version: 16,
+      version: "16",
     },
   },
 

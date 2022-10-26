@@ -1,6 +1,10 @@
 "use strict";
 
 const createWebpackConfig = require("@strike/web-rig/profiles/app/webpack-base.config");
+const CopyFilesPlugin = require("copy-webpack-plugin");
+const { DefinePlugin } = require("webpack");
+const fs = require("fs");
+const shell = require("shelljs");
 
 module.exports = function createConfig(env, argv) {
   return createWebpackConfig({
@@ -9,12 +13,8 @@ module.exports = function createConfig(env, argv) {
     projectRoot: __dirname,
     // Documentation: https://webpack.js.org/configuration/
     configOverride: {
-      resolve: {
-        alias: {
-          // // Use the bundled library
-          // 'heft-web-rig-library-tutorial':
-          //   'heft-web-rig-library-tutorial/dist/heft-web-rig-library-tutorial.js'
-        },
+      output: {
+        publicPath: "/",
       },
       performance: {
         hints: env.production ? "error" : false,
@@ -24,8 +24,40 @@ module.exports = function createConfig(env, argv) {
         // maxAssetSize: 500000
       },
       devServer: {
+        host: "localhost",
         port: 8096,
+        historyApiFallback: true,
       },
+      plugins: [
+        new CopyFilesPlugin({
+          patterns: [
+            {
+              from: "assets/public/",
+              to: "./",
+              toType: "dir",
+            },
+            {
+              from: "./assets/images/",
+              to: ".",
+            },
+          ],
+        }),
+        // Calculate a build number based on the current epoch timestamp.
+        // Pulls 6 digits after lopping off the first 4 for readability.
+        new DefinePlugin({
+          __BUILD_MODE__: JSON.stringify(process.env.NODE_ENV || "development"),
+          __CLIENTVERSION__:
+            "'" +
+            require("./package.json").version +
+            "." +
+            Date.now().toString().substring(2, 8) +
+            "'",
+          __LAST_COMMIT__: JSON.stringify(
+            shell.exec("git rev-parse --short HEAD").stdout.trim()
+          ),
+          __VERSION__: "'" + require("./package.json").version + "'",
+        }),
+      ],
     },
   });
 };
