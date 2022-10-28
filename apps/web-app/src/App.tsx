@@ -1,4 +1,4 @@
-import { download } from "./assets/";
+import { download } from './assets/';
 export const App = (): JSX.Element => {
   return (
     <>

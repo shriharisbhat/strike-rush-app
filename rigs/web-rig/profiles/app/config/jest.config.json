@@ -1,10 +1,7 @@
 {
   "extends": "@rushstack/heft-jest-plugin/includes/jest-shared.config.json",
   "testEnvironment": "jsdom",
-  "reporters": [
-    "default",
-    ["jest-junit", { "outputDirectory": "temp/jest-reports" }]
-  ],
+  "reporters": ["default", ["jest-junit", { "outputDirectory": "temp/jest-reports" }]],
   "clearMocks": true,
   "restoreMocks": true,
   "collectCoverage": true,

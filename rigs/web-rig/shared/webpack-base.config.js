@@ -1,19 +1,14 @@
-"use strict";
+'use strict';
 
-const path = require("path");
-const sass = require("sass");
-const webpack = require("webpack");
-const autoprefixer = require("autoprefixer");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const path = require('path');
+const sass = require('sass');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { DefinePlugin } = webpack;
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-const {
-  merge,
-  unique,
-  mergeWithRules,
-  mergeWithCustomize,
-} = require("webpack-merge");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { merge, unique, mergeWithRules, mergeWithCustomize } = require('webpack-merge');
 
 /**
  * If the "--production" command-line parameter is specified when invoking Heft, then the
@@ -24,15 +19,15 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
 
   const defaultArgs = {
     // Documentation: https://webpack.js.org/configuration/mode/
-    mode: production ? "production" : "development",
+    mode: production ? 'production' : 'development',
     resolve: {
-      extensions: [".mjs", ".js", ".json"],
+      extensions: ['.mjs', '.js', '.json']
     },
     output: production
       ? {
-          chunkFilename: "[name].[contenthash].js",
-          filename: "[name].[contenthash].js",
-          sourceMapFilename: "[name].[contenthash].js.map",
+          chunkFilename: '[name].[contenthash].js',
+          filename: '[name].[contenthash].js',
+          sourceMapFilename: '[name].[contenthash].js.map'
         }
       : {},
     module: {
@@ -49,12 +44,12 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
           // so external packages will be under "common/temp/node_modules/.pnpm/".
           exclude: /[\\/]\.pnpm[\\/]/,
 
-          enforce: "pre",
+          enforce: 'pre',
           use: [
             {
-              loader: require.resolve("source-map-loader"),
-            },
-          ],
+              loader: require.resolve('source-map-loader')
+            }
+          ]
         },
 
         {
@@ -96,19 +91,19 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
             // "WARNING: Do not use style-loader and mini-css-extract-plugin together."
             production
               ? {
-                  loader: MiniCssExtractPlugin.loader,
+                  loader: MiniCssExtractPlugin.loader
                 }
               : {
                   // Generates JavaScript code that injects CSS styles into the DOM at runtime.
                   // The default configuration creates <style> elements from JS strings
                   // https://www.npmjs.com/package/style-loader
-                  loader: require.resolve("style-loader"),
+                  loader: require.resolve('style-loader')
                 },
 
             {
               // Translates CSS into CommonJS
               // https://www.npmjs.com/package/css-loader
-              loader: require.resolve("css-loader"),
+              loader: require.resolve('css-loader'),
               options: {
                 // 0 => no loaders (default);
                 // 1 => postcss-loader;
@@ -146,7 +141,7 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
                   // - a lambda that returns the mode string; the function parameter is the resource path
                   //
                   // DEFAULT: "local"
-                  mode: "local",
+                  mode: 'local',
 
                   // Set this to true if you want to be able to reference the global declarations using import statements
                   // similar to local CSS modules
@@ -157,14 +152,12 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
                   // Provide a recognizable class/module names for developers
                   //
                   // DEFAULT: "[hash:base64]"
-                  localIdentName: production
-                    ? "[hash:base64]"
-                    : "[local]__[hash:base64:5]",
+                  localIdentName: production ? '[hash:base64]' : '[local]__[hash:base64:5]'
                 },
 
-                sourceMap: !production,
-              },
-            },
+                sourceMap: !production
+              }
+            }
           ],
 
           // Nested rules are applied after the parent rules.
@@ -180,35 +173,35 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
                   // and only use the standard SASS syntax.  Thus postcss-loader is used here only to apply the popular
                   // "autoprefixer" plugin improves browser compatibility by generating vendor prefixes.
                   // https://www.npmjs.com/package/postcss-loader
-                  loader: require.resolve("postcss-loader"),
+                  loader: require.resolve('postcss-loader'),
                   options: {
                     postcssOptions: {
                       plugins: [
                         // https://www.npmjs.com/package/autoprefixer
-                        autoprefixer,
-                      ],
+                        autoprefixer
+                      ]
                     },
 
-                    sourceMap: !production,
-                  },
+                    sourceMap: !production
+                  }
                 },
                 {
                   // Compiles SASS syntax into CSS
                   // https://www.npmjs.com/package/sass-loader
-                  loader: require.resolve("sass-loader"),
+                  loader: require.resolve('sass-loader'),
 
                   options: {
                     implementation: sass,
                     sassOptions: {
-                      includePaths: [path.resolve(__dirname, "node_modules")],
+                      includePaths: [path.resolve(__dirname, 'node_modules')]
                     },
 
-                    sourceMap: !production,
-                  },
-                },
-              ],
-            },
-          ],
+                    sourceMap: !production
+                  }
+                }
+              ]
+            }
+          ]
         },
 
         {
@@ -216,58 +209,53 @@ function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
           // Allows import/require() to be used with an asset file. The file will be copied to the output folder,
           // and the import statement will return its URL.
           // https://webpack.js.org/guides/asset-modules/#resource-assets
-          type: "asset/resource",
-        },
-      ],
+          type: 'asset/resource'
+        }
+      ]
     },
     devServer: {
-      host: "localhost",
-      port: 8080,
+      host: 'localhost',
+      port: 8080
     },
     // See here for documentation: https://webpack.js.org/configuration/devtool
-    devtool: production ? undefined : "eval-source-map",
+    devtool: production ? undefined : 'eval-source-map',
     optimization: {
       minimize: !!production,
-      nodeEnv: production ? "production" : "development",
+      nodeEnv: production ? 'production' : 'development',
       minimizer: [
         new CssMinimizerPlugin({
           minimizerOptions: {
-            preset: [
-              "default",
-              { discardComments: { removeAll: !!production } },
-            ],
-          },
+            preset: ['default', { discardComments: { removeAll: !!production } }]
+          }
         }),
         // This magic constant indicates the minimizer defaults
         // https://webpack.js.org/configuration/optimization/#optimizationminimizer
-        "...",
-      ],
+        '...'
+      ]
     },
     plugins: [
       // See here for documentation: https://webpack.js.org/plugins/mini-css-extract-plugin/
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
+        filename: '[name].[contenthash].css'
       }),
 
       // See here for documentation: https://webpack.js.org/plugins/define-plugin/
       new DefinePlugin({
-        DEBUG: !production,
+        DEBUG: !production
       }),
 
-      process.env.REPORT
-        ? new BundleAnalyzerPlugin({ analyzerMode: "static" })
-        : undefined,
-    ],
+      process.env.REPORT ? new BundleAnalyzerPlugin({ analyzerMode: 'static' }) : undefined
+    ]
   };
 
   let result = mergeWithCustomize({
     // Remove duplicate of HtmlWebpackPlugin
     // this allows projects to override the default rig behavior if applicable (ex. when targeting older browsers)
     customizeArray: unique(
-      "plugins",
-      ["HtmlWebpackPlugin"],
+      'plugins',
+      ['HtmlWebpackPlugin'],
       (plugin) => plugin && plugin.constructor && plugin.constructor.name
-    ),
+    )
   })(defaultArgs, configOverride);
 
   // Remove undefined/null plugins

@@ -1,25 +1,20 @@
-"use strict";
+'use strict';
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const createWebpackConfigCommon = require("../../shared/webpack-base.config");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const createWebpackConfigCommon = require('../../shared/webpack-base.config');
 
-module.exports = function createWebpackConfig({
-  env,
-  argv,
-  projectRoot,
-  configOverride,
-}) {
+module.exports = function createWebpackConfig({ env, argv, projectRoot, configOverride }) {
   // Documentation: https://webpack.js.org/configuration/
   const applicationOverrides = {
-    target: ["web", "es5"],
+    target: ['web', 'es5'],
     entry: {
-      app: path.resolve(projectRoot, "lib", "index.js"),
+      app: path.resolve(projectRoot, 'lib', 'index.js')
     },
     optimization: {
       splitChunks: {
-        chunks: "all",
-      },
+        chunks: 'all'
+      }
     },
     plugins: [
       // NOTE: If your project's webpack.config.js provides its own "HtmlWebpackPlugin" configuration,
@@ -28,19 +23,16 @@ module.exports = function createWebpackConfig({
 
       // See here for documentation: https://github.com/jantimon/html-webpack-plugin
       new HtmlWebpackPlugin({
-        filename: "index.html",
-        template: path.resolve(projectRoot, "assets", "index.html"),
-      }),
-    ],
+        filename: 'index.html',
+        template: path.resolve(projectRoot, 'assets', 'index.html')
+      })
+    ]
   };
 
   return createWebpackConfigCommon({
     env: env,
     argv: argv,
     projectRoot: projectRoot,
-    configOverride: createWebpackConfigCommon.merge(
-      applicationOverrides,
-      configOverride
-    ),
+    configOverride: createWebpackConfigCommon.merge(applicationOverrides, configOverride)
   });
 };
