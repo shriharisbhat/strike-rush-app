@@ -1,10 +1,32 @@
 "use strict";
 
-const createWebpackConfig = require("@strike/web-rig/profiles/app/webpack-base.config");
-const CopyFilesPlugin = require("copy-webpack-plugin");
-const { DefinePlugin } = require("webpack");
 const fs = require("fs");
+const os = require("os");
 const shell = require("shelljs");
+const path = require("path");
+const CopyFilesPlugin = require("copy-webpack-plugin");
+const createWebpackConfig = require("@strike/web-rig/profiles/app/webpack-base.config");
+const { DefinePlugin } = require("webpack");
+
+const certAndKey = {
+  cert: path.resolve(os.homedir(), ".config/strike-app-certs/dev.local.crt"),
+  key: path.resolve(os.homedir(), ".config/strike-app-certs/dev.local.key"),
+};
+
+const hasCertAndKey =
+  fs.existsSync(certAndKey.cert) && fs.existsSync(certAndKey.key);
+
+console.log(
+  "\x1b[36m%s\x1b[0m",
+  `HTTPS root cert and key are ${hasCertAndKey ? "PRESENT" : "MISSING"}`
+);
+
+if (!hasCertAndKey) {
+  console.log(
+    "\x1b[36m%s\x1b[0m",
+    "Run ./generate-cert.sh from the src/scripts/ with granting permission to generate self-signed cert"
+  );
+}
 
 module.exports = function createConfig(env, argv) {
   return createWebpackConfig({
@@ -32,10 +54,12 @@ module.exports = function createConfig(env, argv) {
         // maxAssetSize: 500000
       },
       devServer: {
-        host: "localhost",
-        port: 8096,
-        historyApiFallback: true,
-        https: true,
+        open: true,
+        // host: "localhost",
+        // port: 8086,
+        // historyApiFallback: true,
+        https: hasCertAndKey ? certAndKey : true,
+        // client: {},
       },
       plugins: [
         new CopyFilesPlugin({
