@@ -10,6 +10,14 @@ module.exports = function createConfig(env, argv) {
   return createWebpackConfig({
     env: env,
     argv: argv,
+    module: {
+      rules: [
+        {
+          test: /\.(png)$/,
+          type: "asset/resource",
+        },
+      ],
+    },
     projectRoot: __dirname,
     // Documentation: https://webpack.js.org/configuration/
     configOverride: {
@@ -27,7 +35,7 @@ module.exports = function createConfig(env, argv) {
         host: "localhost",
         port: 8096,
         historyApiFallback: true,
-        https:true
+        https: true,
       },
       plugins: [
         new CopyFilesPlugin({

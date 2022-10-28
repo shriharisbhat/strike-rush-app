@@ -1,19 +1,19 @@
 "use strict";
 
-const webpack = require("webpack");
 const path = require("path");
+const sass = require("sass");
+const webpack = require("webpack");
+const autoprefixer = require("autoprefixer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { DefinePlugin } = webpack;
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { DefinePlugin } = webpack;
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const {
   merge,
-  mergeWithCustomize,
-  mergeWithRules,
   unique,
+  mergeWithRules,
+  mergeWithCustomize,
 } = require("webpack-merge");
-const sass = require("sass");
-const autoprefixer = require("autoprefixer");
 
 /**
  * If the "--production" command-line parameter is specified when invoking Heft, then the
