@@ -494,6 +494,7 @@
     {
       "packageName": "@strike/web-rig",
       "projectFolder": "rigs/web-rig"
-    }
+    },
+    { "packageName": "@strike/eslint-config", "projectFolder": "libraries/eslint-config" }
   ]
 }

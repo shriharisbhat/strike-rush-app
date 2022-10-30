@@ -1,4 +1,4 @@
-import * as ReactDOM from 'react-dom/client';
+import { createRoot, Root } from 'react-dom/client';
 import { App } from './App';
 
 declare global {
@@ -17,5 +17,5 @@ window.__meta = {
 };
 
 const container: HTMLElement = document.getElementById('root') as HTMLElement;
-const root: ReactDOM.Root = ReactDOM.createRoot(container);
+const root: Root = createRoot(container);
 root.render(<App />);
