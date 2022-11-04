@@ -1,6 +1,24 @@
+// The "rig.json" file directs tools to look for their config files in an external package.
+// Documentation for this system: https://www.npmjs.com/package/@rushstack/rig-package
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rig-package/rig.schema.json",
 
+  /**
+   * (Required) The name of the rig package to inherit from.
+   * It should be an NPM package name with the "-rig" suffix.
+   */
   "rigPackageName": "@strike/web-rig",
-  "rigProfile": "app"
+  /**
+   * (Optional) Selects a config profile from the rig package. The name must consist of
+   * lowercase alphanumeric words separated by hyphens, for example "web-profile".
+   * If omitted, then the "default" profile will be used.", here we have two profiles,
+   * app and library, so here it would take app and it's config file
+   */
+  "rigProfile": "app-profile"
 }
+/**
+ * The rig.json file tells Heft that if it doesn't find a file in the web-app/config, it should try looking in the @strike/web-rig/profiles/app-profile/config folder instead.
+ * Read more abot this here
+   - https://rushstack.io/pages/heft/rig_packages/
+   - https://www.npmjs.com/package/@rushstack/rig-package
+ */

@@ -2,12 +2,13 @@
 
 A rig package for web projects that build using [Heft](https://www.npmjs.com/package/@rushstack/heft)
 build system. To learn more about rig packages, consult the
+[rushstacks using rigpackages](https://rushstack.io/pages/heft/rig_packages/)
 [@rushstack/rig-package](https://www.npmjs.com/package/@rushstack/rig-package) documentation.
 
 This rig provides the following profiles:
 
-- [app](./profiles/app/): For applications that get bundled using Webpack.
-- [library](./profiles/library/): For creating library packages to be consumed by other web projects. **_Also use this profile for a library meant to be used by both Node.js and web apps._**
+- [app-rofile](./profiles/app-rofile/): For applications that get bundled using Webpack.
+- [library-profile](./profiles/library-profile/): For creating library packages to be consumed by other web projects. **_Also use this profile for a library meant to be used by both Node.js and web apps._**
 
 To enable it, add a **rig.json** file to your project, as shown below:
 
@@ -17,16 +18,15 @@ To enable it, add a **rig.json** file to your project, as shown below:
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rig-package/rig.schema.json",
 
-  "rigPackageName": "@rushstack/heft-web-rig",
-  "rigProfile": "library"
+  "rigPackageName": "@strike/web-rig",
+  "rigProfile": "library-profile"
 }
 ```
 
-The config files provided by this rig profile can be found in the [heft-web-rig/profiles/library](https://github.com/microsoft/rushstack/tree/main/rigs/heft-web-rig/profiles/library) source folder.
+The config files provided by this rig profile can be found in the [web-rig/profiles/library-profile/config] folder.
 
-## Links
+## Some useful Links to check
+- https://www.npmjs.com/package/@rushstack/heft-web-rig
+- https://www.npmjs.com/package/@rushstack/heft-node-rig
+- https://github.com/microsoft/rushstack-samples/tree/main/heft/heft-node-rig-tutorial
 
-- [CHANGELOG.md](https://github.com/microsoft/rushstack/blob/main/rigs/heft-web-rig/CHANGELOG.md) - Find
-  out what's new in the latest version
-
-`@rushstack/heft-web-rig` is part of the [Rush Stack](https://rushstack.io/) family of projects.

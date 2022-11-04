@@ -5,7 +5,7 @@ const os = require('os');
 const shell = require('shelljs');
 const path = require('path');
 const CopyFilesPlugin = require('copy-webpack-plugin');
-const createWebpackConfig = require('@strike/web-rig/profiles/app/webpack-base.config');
+const createWebpackConfig = require('@strike/web-rig/profiles/app-profile/webpack-base.config');
 const { DefinePlugin } = require('webpack');
 
 const certAndKey = {
