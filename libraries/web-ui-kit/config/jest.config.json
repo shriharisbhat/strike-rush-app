@@ -1,0 +1,13 @@
+{
+    "extends": "@strike/web-rig/profiles/library-profile/config/jest.config.json",
+    "//": "TODO: Set the coverage to 80% or higher",
+    "coverageThreshold": {
+      "global": {
+        "branches": 0,
+        "functions": 0,
+        "lines": 0,
+        "statements": 0
+      }
+    }
+  }
+  

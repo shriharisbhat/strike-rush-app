@@ -1,0 +1,13 @@
+{
+    "extends": "@strike/web-rig/profiles/app-profile/config/heft.json",
+    "heftPlugins": [
+      {
+        "plugin": "@rushstack/heft-storybook-plugin",
+        "options": {
+          "storykitPackageName": "@strike/web-storykit",
+          "startupModulePath": "@storybook/react/bin/index.js"
+        }
+      }
+    ]
+  }
+  

@@ -1,0 +1,66 @@
+/* Thin */
+@font-face {
+  font-family: 'StreetLCG2';
+  src: url('../fonts/StreetLCG2-Thin.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* Book */
+@font-face {
+  font-family: 'StreetLCG2';
+  src: url('../fonts/StreetLCG2-Book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'StreetLCG2';
+  src: url('../fonts/StreetLCG2-Medium.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Glyph */
+@font-face {
+  font-family: 'hbomax-glyph';
+  src: url('../fonts/hbomax-glyph_v0.179.woff2') format('woff2'),
+    url('../fonts/hbomax-glyph_v0.179.woff') format('woff'),
+    url('../fonts/hbomax-glyph_v0.179.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-casual-regular';
+  src: url('../fonts/cinecav-casual-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-mono-regular';
+  src: url('../fonts/cinecav-mono-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-sans-regular';
+  src: url('../fonts/cinecav-sans-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-script-regular';
+  src: url('../fonts/cinecav-script-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-serif-regular';
+  src: url('../fonts/cinecav-serif-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-small-caps-regular';
+  src: url('../fonts/cinecav-small-caps-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'cinecav-type-regular';
+  src: url('../fonts/cinecav-type-regular.ttf') format('truetype');
+}
