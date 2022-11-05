@@ -1,0 +1,3 @@
+{
+  "extends": "@strike/web-rig/profiles/library-profile/config/jest.config.json"
+}

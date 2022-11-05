@@ -1,0 +1,36 @@
+# Ignore all files by default to prevent accidentally publishing sensitive files.
+**
+
+# Use negative patterns to include files.
+# NOTE: These don't need to be specified, because NPM includes them automatically.
+#
+# package.json
+# README (and its variants)
+# CHANGELOG (and its variants)
+# LICENSE / LICENCE
+
+# Project specific definitions
+# -----------------------------
+
+# Include compiled code
+!dist/**/*.js
+!dist/**/*.d.ts
+!dist/**/*.map
+!dist/**/*.json
+
+!lib/**/*.js
+!lib/**/*.d.ts
+!lib/**/*.map
+!lib/**/*.json
+
+!lib-commonjs/**/*.js
+!lib-commonjs/**/*.d.ts
+!lib-commonjs/**/*.map
+!lib-commonjs/**/*.json
+
+# Ignore tests
+**/*.test.*
+**/__tests__/**
+**/__test__/**
+**/test/**
+**/tests/**

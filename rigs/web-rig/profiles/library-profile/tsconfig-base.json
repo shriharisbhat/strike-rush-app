@@ -3,8 +3,7 @@
 
   "compilerOptions": {
     "outDir": "../../../../../lib",
-    "rootDir": "../../../../../src",
-    "rootDirs": ["../../../../../src", "../../../../../temp/sass-ts"],
+    "rootDirs": ["../../../../../src/", "../../../../../temp/sass-ts/"],
 
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -12,20 +11,19 @@
     "sourceMap": true,
     "declarationMap": true,
     "inlineSources": true,
-    "experimentalDecorators": true,
     "strict": true,
-    "useUnknownInCatchVariables": false,
     "esModuleInterop": true,
-    "noEmitOnError": false,
-    "allowUnreachableCode": false,
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false,
     "importHelpers": true,
-
+    "downlevelIteration": true,
     "types": [],
 
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es5",
-    "lib": ["es5", "scripthost", "es2015.collection", "es2015.promise", "es2015.iterable", "dom"]
+
+    "target": "ES2019",
+    "lib": ["ES2020", "ScriptHost", "DOM", "DOM.Iterable"]
   },
   "include": ["../../../../../src/**/*.ts", "../../../../../src/**/*.tsx"]
 }
