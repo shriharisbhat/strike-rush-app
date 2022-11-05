@@ -496,6 +496,7 @@
       "projectFolder": "rigs/web-rig"
     },
     { "packageName": "@strike/eslint-config", "projectFolder": "libraries/eslint-config" },
-    { "packageName": "@strike/web-storykit", "projectFolder": "libraries/st-web-storykit" }
+    { "packageName": "@strike/web-storykit", "projectFolder": "libraries/st-web-storykit" },
+    { "packageName": "@strike/web-ui-kit", "projectFolder": "libraries/web-ui-kit" }
   ]
 }
