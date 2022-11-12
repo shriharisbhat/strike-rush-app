@@ -1,7 +1,8 @@
 {
   "name": "@strike/web-ui-kit",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "Web UI kit",
   "main": "lib-commonjs/index.js",
   "module": "lib/index.js",
   "typings": "dist/web-ui-kit.d.ts",
@@ -24,8 +25,8 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
-    "@rushstack/heft": "^0.48.0",
-    "@rushstack/heft-jest-plugin": "^0.3.37",
+    "@rushstack/heft": "^0.48.7",
+    "@rushstack/heft-jest-plugin": "^0.3.44",
     "@rushstack/heft-storybook-plugin": "0.1.83",
     "@storybook/cli": "^6.5.12",
     "@storybook/csf": "0.0.2--canary.4566f4d.1",

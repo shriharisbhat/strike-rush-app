@@ -10,8 +10,8 @@
     "start": "heft start"
   },
   "dependencies": {
-    "react": "~18.2.0",
-    "react-dom": "~18.2.0"
+    "react": "~17.0.2",
+    "react-dom": "~17.0.2"
   },
   "devDependencies": {
     "@strike/web-rig": "workspace:*",
@@ -20,8 +20,8 @@
     "@babel/preset-env": "~7.19.4",
     "@babel/preset-react": "~7.18.6",
     "@babel/preset-typescript": "~7.18.6",
-    "@types/react": "~18.0.22",
-    "@types/react-dom": "~18.0.7",
+    "@types/react": "17.0.44",
+    "@types/react-dom": "17.0.2",
     "@types/heft-jest": "~1.0.3",
     "@types/webpack-env": "~1.18.0",
     "typescript": "~4.8.4",

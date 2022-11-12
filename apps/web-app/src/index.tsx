@@ -1,4 +1,4 @@
-import { createRoot, Root } from 'react-dom/client';
+import { render } from 'react-dom';
 import { App } from './App';
 
 declare global {
@@ -16,6 +16,5 @@ window.__meta = {
   BUILD_MODE: __BUILD_MODE__
 };
 
-const container: HTMLElement = document.getElementById('root') as HTMLElement;
-const root: Root = createRoot(container);
-root.render(<App />);
+const root: HTMLElement = document.getElementById('root') as HTMLElement;
+render(<App />, root);

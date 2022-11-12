@@ -14,8 +14,8 @@ importers:
       '@strike/eslint-config': workspace:*
       '@strike/web-rig': workspace:*
       '@types/heft-jest': ~1.0.3
-      '@types/react': ~18.0.22
-      '@types/react-dom': ~18.0.7
+      '@types/react': 17.0.44
+      '@types/react-dom': 17.0.2
       '@types/webpack-env': ~1.18.0
       '@typescript-eslint/parser': ~5.41.0
       copy-webpack-plugin: ~11.0.0
@@ -23,14 +23,14 @@ importers:
       eslint-import-resolver-typescript: ~3.5.2
       eslint-plugin-import: ~2.26.0
       eslint-plugin-react-hooks: ~4.6.0
-      react: ~18.2.0
-      react-dom: ~18.2.0
+      react: ~17.0.2
+      react-dom: ~17.0.2
       shelljs: ~0.8.5
       typescript: ~4.8.4
       webpack: ~5.74.0
     dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     devDependencies:
       '@babel/core': 7.19.6
       '@babel/preset-env': 7.19.4_@babel+core@7.19.6
@@ -39,8 +39,8 @@ importers:
       '@strike/eslint-config': link:../../libraries/eslint-config
       '@strike/web-rig': link:../../rigs/web-rig
       '@types/heft-jest': 1.0.3
-      '@types/react': 18.0.25
-      '@types/react-dom': 18.0.8
+      '@types/react': 17.0.44
+      '@types/react-dom': 17.0.2
       '@types/webpack-env': 1.18.0
       '@typescript-eslint/parser': 5.41.0_eslint@8.26.0+typescript@4.8.4
       copy-webpack-plugin: 11.0.0_webpack@5.74.0
@@ -130,8 +130,8 @@ importers:
     specifiers:
       '@babel/core': ^7.12.10
       '@babel/preset-env': ^7.12.10
-      '@rushstack/heft': ^0.48.0
-      '@rushstack/heft-jest-plugin': ^0.3.37
+      '@rushstack/heft': ^0.48.7
+      '@rushstack/heft-jest-plugin': ^0.3.44
       '@rushstack/heft-storybook-plugin': 0.1.83
       '@storybook/cli': ^6.5.12
       '@storybook/csf': 0.0.2--canary.4566f4d.1
@@ -5307,13 +5307,7 @@ packages:
   /@types/react-dom/17.0.2:
     resolution: {integrity: sha512-Icd9KEgdnFfJs39KyRyr0jQ7EKhq8U6CcHRMGAS45fp5qgUvxL3ujUCfWFttUK2UErqZNj97t9gsVPNAqcwoCg==}
     dependencies:
-      '@types/react': 18.0.25
-    dev: true
-
-  /@types/react-dom/18.0.8:
-    resolution: {integrity: sha512-C3GYO0HLaOkk9dDAz3Dl4sbe4AKUGTCfFIZsz3n/82dPNN8Du533HzKatDxeUYWu24wJgMP1xICqkWk1YOLOIw==}
-    dependencies:
-      '@types/react': 18.0.25
+      '@types/react': 17.0.44
     dev: true
 
   /@types/react-test-renderer/17.0.2:
@@ -5324,14 +5318,6 @@ packages:
 
   /@types/react/17.0.44:
     resolution: {integrity: sha512-Ye0nlw09GeMp2Suh8qoOv0odfgCoowfM/9MG6WeRD60Gq9wS90bdkdRtYbRkNhXOpG4H+YXGvj4wOWhAC0LJ1g==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.2
-      csstype: 3.1.1
-    dev: true
-
-  /@types/react/18.0.25:
-    resolution: {integrity: sha512-xD6c0KDT4m7n9uD4ZHi02lzskaiqcBxf4zi+tXZY98a04wvc0hi/TcCPC2FOESZi51Nd7tlUeOJY8RofL799/g==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
@@ -13662,16 +13648,6 @@ packages:
       scheduler: 0.20.2
     dev: false
 
-  /react-dom/18.2.0_react@18.2.0:
-    resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
-    peerDependencies:
-      react: ^18.2.0
-    dependencies:
-      loose-envify: 1.4.0
-      react: 18.2.0
-      scheduler: 0.23.0
-    dev: false
-
   /react-element-to-jsx-string/14.3.4_react-dom@17.0.2+react@17.0.2:
     resolution: {integrity: sha512-t4ZwvV6vwNxzujDQ+37bspnLwA4JlgUPWhLjBJWsNIDceAf6ZKUTCjdm08cN6WeZ5pTMKiCJkmAYnpmR4Bm+dg==}
     peerDependencies:
@@ -13746,13 +13722,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-    dev: false
-
-  /react/18.2.0:
-    resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      loose-envify: 1.4.0
     dev: false
 
   /read-pkg-up/1.0.1:
@@ -14302,12 +14271,6 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
-
-  /scheduler/0.23.0:
-    resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
-    dependencies:
-      loose-envify: 1.4.0
-    dev: false
 
   /schema-utils/1.0.0:
     resolution: {integrity: sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==}
