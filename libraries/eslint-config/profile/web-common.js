@@ -7,7 +7,7 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript'
   ],
-  plugins: ['react-hooks', 'eslint-plugin-react-hooks'],
+  plugins: ['react-hooks', 'eslint-plugin-react-hooks', 'eslint-plugin-import', 'import'],
   parser: '@typescript-eslint/parser',
 
   rules: {

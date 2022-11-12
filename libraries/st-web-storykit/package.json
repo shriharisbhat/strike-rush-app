@@ -35,7 +35,7 @@
     "@types/react-dom": "17.0.2",
     "@strike/eslint-config": "workspace:*",
     "@strike/web-rig": "workspace:*",
-    "eslint": "~8.17.0",
+    "eslint": "~8.26.0",
     "jest-junit": "~12.0.0",
     "require-from-string": "~2.0.2",
     "typescript": "^4.7.3",
