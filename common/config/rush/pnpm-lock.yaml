@@ -74,7 +74,7 @@ importers:
   ../../libraries/st-web-storykit:
     specifiers:
       '@babel/core': ^7.12.10
-      '@rushstack/heft': ^0.48.0
+      '@rushstack/heft': ^0.48.7
       '@storybook/addon-actions': ^6.5.12
       '@storybook/addon-essentials': ^6.5.12
       '@storybook/addon-links': ^6.5.12
@@ -203,8 +203,8 @@ importers:
 
   ../../rigs/web-rig:
     specifiers:
-      '@rushstack/heft': ^0.48.6
-      '@rushstack/heft-jest-plugin': ^0.3.43
+      '@rushstack/heft': ^0.48.7
+      '@rushstack/heft-jest-plugin': ^0.3.44
       '@rushstack/heft-sass-plugin': ^0.6.3
       '@rushstack/heft-webpack5-plugin': ~0.5.59
       autoprefixer: ~10.4.2

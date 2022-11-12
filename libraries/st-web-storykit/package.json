@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@rushstack/heft": "^0.48.0",
+    "@rushstack/heft": "^0.48.7",
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@types/heft-jest": "1.0.2",
